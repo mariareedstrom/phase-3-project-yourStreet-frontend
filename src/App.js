@@ -5,6 +5,11 @@ import Header from "./components/Header";
 import NeighborhoodShow from "./pages/NeighborhoodShow";
 import PageIndex from "./pages/PageIndex";
 import NeighborhoodCreate from "./pages/NeighborhoodCreate"
+import HouseholdCreate from "./pages/HouseholdCreate";
+import LocationCreate from "./pages/LocationCreate";
+import HouseholdShow from "./pages/HouseholdShow";
+
+
 
 function App() {
 
@@ -18,13 +23,21 @@ function App() {
             <Route exact path ='/neighborhoods/:id' >
                 <NeighborhoodShow  />
             </Route>
+            <Route exact path ='/households/new' >
+                <HouseholdCreate  />
+            </Route>
+            <Route exact path = '/locations/new'>
+                <LocationCreate />
+            </Route>
+            <Route exact path = '/households/:id'>
+                <HouseholdShow />
+            </Route>
             <Route path ='/'>
                 <PageIndex />
             </Route>
             <Route>
                 <Redirect to='/' />
             </Route>
-
         </Switch>
     </main>
   );

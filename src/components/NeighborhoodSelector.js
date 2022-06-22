@@ -6,7 +6,7 @@ function NeighborhoodSelector({neighborhoods, onSubmit}){
     const [selectedNeighborhood, setSelectedNeighborhood] = useState({})
 
     function handleSelectNeighborhood(e){
-        const selected = neighborhoods.find(n => n.name === e.target.value)
+        const selected = neighborhoods.find(n => n.id === parseInt(e.target.value))
         setSelectedNeighborhood(selected)
         // console.log(selected)
     }
@@ -19,15 +19,15 @@ function NeighborhoodSelector({neighborhoods, onSubmit}){
 
    return(
        <form onSubmit={handleSubmit}>
-           <label> Neighborhood:
+           <label> View A Neighborhood:
                 <select name="neighborhood_id"
-                        value={selectedNeighborhood.name}
+                        value={selectedNeighborhood.id}
                         onChange={handleSelectNeighborhood}>
                     <option>Select a neighborhood</option>
-                    {neighborhoods.map(n => <option value={n.name} key={n.id}>{n.name}</option>)}
+                    {neighborhoods.map(n => <option value={n.id} key={n.id}>{n.name}</option>)}
                  </select>
             </label>
-           <input type="submit" value="Search"/>
+           <input type="submit" value="Select"/>
        </form>
    )
 

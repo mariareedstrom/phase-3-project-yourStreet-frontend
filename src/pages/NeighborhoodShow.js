@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from "react";
 import HouseholdCard from '../components/HouseholdCard'
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 const SERVER_API = process.env.REACT_APP_SERVER_API;
 
@@ -23,12 +23,10 @@ function NeighborhoodShow(){
 
     return(
         <div>
-
             <h3>This is the {neighborhood.name} neighborhood page</h3>
             {neighborhood.locations.map((l) => {
                 return (<HouseholdCard household={l.household} address={l.address} key={l.household.id}/>)
             })}
-
         </div>
     )
 

@@ -1,12 +1,13 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 function Header(){
     return(
-        <div>
-            <h2>Logo goes here</h2>
-            <h4>Welcome to the neighborhood!</h4>
-            <h5>~never forget a neighbor's name again.. </h5>
-        </div>
+        <header>
+            <nav>
+                <Link to='/households/new'>Add a Household</Link>
+            </nav>
+        </header>
     )
 }
 

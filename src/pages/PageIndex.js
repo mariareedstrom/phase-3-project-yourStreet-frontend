@@ -24,9 +24,6 @@ function PageIndex(){
     return(
         <div>
             <NeighborhoodSelector neighborhoods={neighborhoods} onSubmit={onSubmit} />
-            {/*<Link to='/neighborhoods/new' >*/}
-            {/*    <h4>Add a new neighborhood here!</h4>*/}
-            {/*</Link>*/}
         </div>
     )
 

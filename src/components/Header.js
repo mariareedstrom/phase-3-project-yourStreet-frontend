@@ -5,7 +5,12 @@ function Header(){
     return(
         <header>
             <nav>
-                <Link to='/households/new'>Add a Household</Link>
+                {/*<div>*/}
+                {/*    <Link to='/households/new'>Add a Household</Link>*/}
+                {/*</div>*/}
+                <div>
+                    <Link to={'/'}>Take me home</Link>
+                </div>
             </nav>
         </header>
     )

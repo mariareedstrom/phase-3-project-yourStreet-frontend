@@ -1,43 +1,11 @@
 import React, { useState, useRef } from 'react'
+import MemberInput from "./MemberInput";
 
 function NewHouseholdMembersForm({membersFormData, onMembersUpdated}) {
     const memberList = membersFormData.map((memberFormData, index) => {
         return (
             <li key={`members[${index}]`} style={{ marginBottom: "16px" }}>
-                <label>First Name:</label>
-                <input
-                    type="text"
-                    name={`member[${index}].first_name`}
-                    aria-label="first name"
-                    value={memberFormData.first_name}
-                    required
-                    onChange={handleChangeMember}
-                ></input>
-                <label>Last Name:</label>
-                <input
-                    type="text"
-                    name={`member[${index}].last_name`}
-                    aria-label="last name"
-                    value={memberFormData.last_name}
-                    required
-                    onChange={handleChangeMember}
-                ></input>
-                <label>Age:</label>
-                <input
-                    type="integer"
-                    name={`member[${index}].age`}
-                    aria-label="age"
-                    value={memberFormData.age}
-                    onChange={handleChangeMember}
-                ></input>
-                <label>Profession:</label>
-                <input
-                    type="text"
-                    name={`member[${index}].profession`}
-                    aria-label="profession"
-                    value={memberFormData.profession}
-                    onChange={handleChangeMember}
-                ></input>
+               <MemberInput onChange={handleChangeMember} value={membersFormData} index={index}/>
             </li>
         );
     });

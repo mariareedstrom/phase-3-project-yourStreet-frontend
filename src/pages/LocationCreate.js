@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import NewLocationForm from "../components/NewLocationForm";
-import { useLocation} from "react-router-dom";
+import { useLocation, useHistory} from "react-router-dom";
 
 const SERVER_API = process.env.REACT_APP_SERVER_API;
 
@@ -8,6 +8,7 @@ function LocationCreate(){
     const [neighborhoods, setNeighborhoods] = useState([])
     const location = useLocation()
     const {householdId} = location.state
+    const history = useHistory()
 
     useEffect(() => {
             fetch(`${SERVER_API}/neighborhoods`)
@@ -25,7 +26,9 @@ function LocationCreate(){
                 body: JSON.stringify(newL)
             })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(_data => {
+                history.push(`/households/${householdId}`)
+            })
     }
 
     return (

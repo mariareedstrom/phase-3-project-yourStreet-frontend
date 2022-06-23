@@ -19,13 +19,13 @@ function NeighborhoodShow(){
             })
     }, [neighborhoodId])
 
-    if(!isLoaded) return <h3>Everybody needs good neighbors, we're getting yours!</h3>
+    if(!isLoaded) return <h3>Loading...</h3>
 
     return(
         <div>
             <h3>This is the {neighborhood.name} neighborhood page</h3>
             {neighborhood.locations.map((l) => {
-                return (<HouseholdCard household={l.household} address={l.address} key={l.household.id}/>)
+                return (<HouseholdCard household={l.household} address={l.address} key={l.id}/>)
             })}
         </div>
     )

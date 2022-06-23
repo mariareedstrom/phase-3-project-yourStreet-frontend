@@ -21,13 +21,13 @@ function NeighborhoodSelector({neighborhoods, onSubmit}){
        <form onSubmit={handleSubmit}>
            <label> View A Neighborhood:
                 <select name="neighborhood_id"
-                        value={selectedNeighborhood.id}
+                        value={selectedNeighborhood && selectedNeighborhood.id}
                         onChange={handleSelectNeighborhood}>
                     <option>Select a neighborhood</option>
                     {neighborhoods.map(n => <option value={n.id} key={n.id}>{n.name}</option>)}
                  </select>
             </label>
-           <input type="submit" value="Select"/>
+           <input type="submit" value="Select" disabled={!(selectedNeighborhood && selectedNeighborhood.id)}/>
        </form>
    )
 

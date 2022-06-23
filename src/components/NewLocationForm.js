@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {useHistory} from "react-router-dom";
 
 
 function NewLocationForm({onSubmit, householdId, neighborhoods}){
@@ -14,7 +13,7 @@ function NewLocationForm({onSubmit, householdId, neighborhoods}){
         throw "household_id is required"
     }
 
-    const history = useHistory()
+
 
     function handleFormChange(e){
         setLocationFormData({... locationFormData, [e.target.name]: e.target.value})
@@ -31,7 +30,6 @@ function NewLocationForm({onSubmit, householdId, neighborhoods}){
                       neighborhood_id: ''
                   })
         })
-        history.push(`/households/${householdId}`)
     }
 
 

@@ -1,6 +1,8 @@
 import React, {useEffect} from "react";
 import MemberInput from "./MemberInput";
 import {useState} from "react";
+import {useHistory} from "react-router-dom";
+import {Typography, Box, Button} from "@mui/material";
 
 
 function MemberForm({onSubmit, member}){
@@ -23,6 +25,8 @@ function MemberForm({onSubmit, member}){
         })
     },[member])
 
+    const history = useHistory()
+
     function handleChangeMember(e) {
         const key = e.target.name.replace("member[0].", "")
         setMemberFormData({...memberFormData, [key]: e.target.value});
@@ -33,13 +37,34 @@ function MemberForm({onSubmit, member}){
         onSubmit(memberFormData)
     }
 
+    function handleFromCancel(e){
+        history.push(`/households/${memberFormData.household_id}`)
+    }
+
     return (
-        <form onSubmit={handleFormSubmit}>
+        <Box
+            component="form"
+            onSubmit={handleFormSubmit}
+            maxWidth="600px"
+            width="100%"
+        >
+            <Typography gutterBottom component="h2" variant="h4">
+                Add a new household member
+            </Typography>
+
             <MemberInput onChange={handleChangeMember} value={memberFormData} index={0}/>
-            <button type="submit" >
-                Submit
-            </button>
-        </form>
+
+            <Box component="footer" display="flex" justifyContent="end" gap={1} margin={1}>
+                <Button variant="outlined" type="submit" >
+                    Submit
+                </Button>
+                <Button variant="contained" onClick={handleFromCancel} >
+                    Cancel
+                </Button>
+            </Box>
+
+
+        </Box>
     )
 }
 

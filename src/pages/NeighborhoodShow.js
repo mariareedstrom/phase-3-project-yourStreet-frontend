@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react";
 import HouseholdCard from '../components/HouseholdCard'
 import {Link, useParams} from "react-router-dom";
+import {Box, Button, Card, CardActions, CardContent, Grid, Typography} from '@mui/material'
 
 const SERVER_API = process.env.REACT_APP_SERVER_API;
 
@@ -21,13 +22,38 @@ function NeighborhoodShow(){
 
     if(!isLoaded) return <h3>Loading...</h3>
 
-    return(
-        <div>
-            <h3>This is the {neighborhood.name} neighborhood page</h3>
-            {neighborhood.locations.map((l) => {
-                return (<HouseholdCard household={l.household} address={l.address} key={l.id}/>)
+    return (
+        <Box sx={{width: "100%"}} >
+            <Typography component="h2" variant="h4" sx={{margin: "16px 0"}}>
+                Welcome to the {neighborhood.name} neighborhood page
+            </Typography>
+            <Grid container spacing={2} sx={{marginBottom: '16px'}}>
+            {
+                neighborhood.locations.map((l) => {
+                return (
+                    <Grid item key={l.id} >
+                        <Card sx={{minWidth: "175px"}}>
+                            <CardContent>
+                                <Typography component="h4" variant="h6" gutterBottom>
+                                                <span style={{marginRight: "8px"}}>
+                                                    {l.household.family_name}
+                                                </span>
+                                </Typography>
+
+                                <Typography variant="body2" sx={{minHeight: "50px"}}>
+                                    {l.address}
+                                </Typography>
+
+                                <CardActions sx={{justifyContent: "end"}}>
+                                    <Button component={Link} to={`/households/${l.household.id}`}>View Details</Button>
+                                </CardActions>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                )
             })}
-        </div>
+            </Grid>
+        </Box>
     )
 
 }

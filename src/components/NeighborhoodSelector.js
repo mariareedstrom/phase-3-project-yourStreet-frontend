@@ -1,34 +1,27 @@
 import React from "react";
-import {useState} from "react";
+import {FormControl, Select, MenuItem, InputLabel} from "@mui/material";
 
 
 function NeighborhoodSelector({neighborhoods, onSubmit}){
-    const [selectedNeighborhood, setSelectedNeighborhood] = useState({})
 
     function handleSelectNeighborhood(e){
         const selected = neighborhoods.find(n => n.id === parseInt(e.target.value))
-        setSelectedNeighborhood(selected)
-        // console.log(selected)
-    }
-
-    function handleSubmit(e){
-        e.preventDefault()
-        // console.log(selectedNeighborhood)
-        onSubmit(selectedNeighborhood)
+        onSubmit(selected)
     }
 
    return(
-       <form onSubmit={handleSubmit}>
-           <label> View A Neighborhood:
-                <select name="neighborhood_id"
-                        value={selectedNeighborhood && selectedNeighborhood.id}
-                        onChange={handleSelectNeighborhood}>
-                    <option>Select a neighborhood</option>
-                    {neighborhoods.map(n => <option value={n.id} key={n.id}>{n.name}</option>)}
-                 </select>
-            </label>
-           <input type="submit" value="Select" disabled={!(selectedNeighborhood && selectedNeighborhood.id)}/>
-       </form>
+       <FormControl fullWidth>
+           <InputLabel id="neighborhood-label">View A Neighborhood</InputLabel>
+           <Select
+               labelId="neighborhood-label"
+               name="neighborhood_id"
+               label="Select a neighborhood"
+               onChange={handleSelectNeighborhood}
+           >
+               {neighborhoods.map(n => <MenuItem value={n.id} key={n.id}>{n.name}</MenuItem>)}
+           </Select>
+       </FormControl>
+
    )
 
 }

@@ -1,43 +1,66 @@
 import React from "react"
+import { TextField, Container } from '@mui/material'
 
 function MemberInput({onChange, value, index=0}){
 
     return (
         <>
-            <label>First Name:</label>
-            <input
+            <TextField
+                required
                 type="text"
+                id="outlined-basic"
+                label="First Name"
+                aria-label="first-name"
+                variant="outlined"
                 name={`member[${index}].first_name`}
-                aria-label="first name"
+
                 value={value.first_name}
-                required
                 onChange={onChange}
-            ></input>
-            <label>Last Name:</label>
-            <input
+                margin="dense"
+                fullWidth
+            ></TextField>
+
+            <TextField
+                required
                 type="text"
+                id="outlined-basic"
+                label="Last Name"
+                variant="outlined"
                 name={`member[${index}].last_name`}
-                aria-label="last name"
+
                 value={value.last_name}
-                required
                 onChange={onChange}
-            ></input>
-            <label>Age:</label>
-            <input
-                type="integer"
+                margin="dense"
+                fullWidth
+            ></TextField>
+
+            <TextField
+
+                type="text"
+                id="outlined-basic"
+                label="Age"
+                variant="outlined"
                 name={`member[${index}].age`}
-                aria-label="age"
+
                 value={value.age}
                 onChange={onChange}
-            ></input>
-            <label>Profession:</label>
-            <input
+                margin="dense"
+                fullWidth
+            ></TextField>
+
+            <TextField
+
                 type="text"
+                id="outlined-basic"
+                label="Profession"
+                variant="outlined"
                 name={`member[${index}].profession`}
-                aria-label="profession"
+
                 value={value.profession}
                 onChange={onChange}
-            ></input>
+                margin="dense"
+                fullWidth
+            ></TextField>
         </>
     )
 }

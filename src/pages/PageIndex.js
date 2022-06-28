@@ -1,8 +1,6 @@
 import React, { useEffect, useState} from "react";
-import {useHistory, Link} from "react-router-dom";
-
+import {useHistory} from "react-router-dom";
 import { Box } from "@mui/material";
-
 import NeighborhoodSelector from "../components/NeighborhoodSelector";
 
 const SERVER_API = process.env.REACT_APP_SERVER_API;

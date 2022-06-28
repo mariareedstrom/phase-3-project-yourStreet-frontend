@@ -19,7 +19,7 @@ const SERVER_API = process.env.REACT_APP_SERVER_API;
 function App() {
     const [user, setUser] = useState(null)
 
-    // I don't have "user", so I fake it
+    // There is no "user", so I simulate one
     useEffect(() => {
         fetch(`${SERVER_API}/members?first_name=Phil&last_name=Dunphy`)
             .then(res => res.json())

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useHistory} from "react-router-dom";
-import {Button, Container, Typography, TextField, FormControl, InputLabel, Select, MenuItem, Box} from "@mui/material";
+import {Button, Typography, TextField, InputLabel, Select, MenuItem, Box} from "@mui/material";
 
 
 function NewLocationForm({onSubmit, householdId, neighborhoods}){
@@ -69,7 +69,6 @@ const history = useHistory()
                 id="outlined-basic"
                 label="Name"
                 name="name"
-
                 aria-label="location_name"
                 value={locationFormData.name}
                 onChange={handleFormChange}
@@ -83,7 +82,6 @@ const history = useHistory()
                 id="outlined-basic"
                 label="Address"
                 name="address"
-
                 aria-label="address"
                 value={locationFormData.address}
                 onChange={handleFormChange}

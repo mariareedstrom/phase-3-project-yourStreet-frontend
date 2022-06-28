@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import {Box, AppBar, Typography, Toolbar, Avatar} from "@mui/material";
+import {Box, AppBar, Toolbar, Avatar} from "@mui/material";
 
 function Header({user}){
     return(

@@ -1,5 +1,4 @@
 import React, { useEffect, useState} from "react";
-import HouseholdCard from '../components/HouseholdCard'
 import {Link, useParams} from "react-router-dom";
 import {Box, Button, Card, CardActions, CardContent, Grid, Typography} from '@mui/material'
 

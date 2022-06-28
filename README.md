@@ -23,10 +23,11 @@ User can add, edit or delete Household Members
 User can delete or add Homes
 
 #### Select a Neighborhood and to view household
-![clip 1]()
+![gif 1](./docs/gif%201.gif)
+
 
 #### View and Edit Household Details
-![clip 2]()
+![gif 2](./docs/gif%202.gif)
 
 
 ### How to use

@@ -106,7 +106,7 @@ function HouseholdShow() {
                 </footer>
             </article>
 
-            <List dense="dense">
+            <List dense={true}>
 
                 <Typography component="h3" variant="h5">
                     Our homes
@@ -125,6 +125,7 @@ function HouseholdShow() {
                                 <ListItemText
                                     primaryTypographyProps={{component: 'h4', variant: "h6"}}
                                     primary={location.name}
+                                    secondaryTypographyProps={{component: 'div'}}
                                     secondary={
                                         <>
                                             {location.address}
@@ -133,7 +134,6 @@ function HouseholdShow() {
                                                     Neighborhood
                                                 </Link>
                                             </div>
-
                                         </>
                                     }
                                 />

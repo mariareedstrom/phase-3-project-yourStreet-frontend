@@ -7,12 +7,10 @@ showcase skills learned in Phase 3 of Flatiron School's Software Engineering Pro
 
 yourStreet is an application that allows a user to keep track of their neighbors.
 
-
-
-
 ### Features
-User can view and edit their own household
-(Note: the application simulates a user being logged in)
+User can create, view, and edit their own household
+
+> _**Note:** The application simulates a user being logged in._
 
 User can select and view a neighborhood
 
@@ -38,20 +36,19 @@ and the household's homes.
 
 Select edit or delete on a member card to take either of these actions.
 
+> _**Note:** Read only functionality is not implemented given no actual user or permissions._
+
 Click the delete icon to delete a home, or the "add a home" button to add a new one.
 
 
 ## Requirements
- node version 16.14.5
-
- npm version 8.3.1
+- node version 16.14.5
+- npm version 8.3.1
 
 ## Get started
-Fork and clone
-
-Run nmp install
-
-Run npm start
+1. Fork and clone
+1. Run nmp install
+1. Run npm start
 
 Follow directions for [backend](https://github.com/mariareedstrom/phase-3-sinatra-react-project).
 
@@ -68,8 +65,5 @@ Follow directions for [backend](https://github.com/mariareedstrom/phase-3-sinatr
 [create-react-app](https://create-react-app.dev/)
 
 [react router](https://reactrouter.com/)
-
-
-
 
  
